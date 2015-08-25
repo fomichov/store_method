@@ -1,3 +1,5 @@
 .DS_Store
 .rvmrc
 Gemfile.lock
+store_method.sqlite3
+spec/debug.log
