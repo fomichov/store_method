@@ -61,7 +61,7 @@ In case if you need to refresh stored value, call stored method with "refresh_" 
 ```ruby
 user = User.first
 user.refresh_gravatar_url
-SQL (5.7ms)  UPDATE `users` SET `users`.`avatar_url` = 'http://www.gravatar.com/avatar/fc383b8294226d72f3a7828eeef86987?d=https%3A%2F%2Fidenticons.github.com%2Ffc383b8294226d72f3a7828eeef86987.png&s=42' WHERE `users`.`id` = 1
+SQL (5.7ms)  UPDATE `users` SET `users`.`gravatar_url` = 'http://www.gravatar.com/avatar/fc383b8294226d72f3a7828eeef86987?d=https%3A%2F%2Fidenticons.github.com%2Ffc383b8294226d72f3a7828eeef86987.png&s=42' WHERE `users`.`id` = 1
  => "http://www.gravatar.com/avatar/fc383b8294226d72f3a7828eeef86987?d=https%3A%2F%2Fidenticons.github.com%2Ffc383b8294226d72f3a7828eeef86987.png&s=42" 
 ```
 
