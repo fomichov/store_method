@@ -30,20 +30,28 @@ module StoreMethod
 
       define_method(name) do |*args|
         if args.empty?
-          val = read_attribute(name.to_sym)
+          val = attributes[name.to_s]
           unless val
             val = send("#{name}_orig")
-            update_column(name.to_sym, val)
+            if new_record?
+              assign_attributes({name.to_sym => val})
+            else
+              update_column(name.to_sym, val)
+            end
           end
           return val
         else
-          return send("#{name}_orig", args)
+          return send("#{name}_orig", *args)
         end
       end
       
       define_method("refresh_#{name}") do |*args|
         val = send("#{name}_orig")
-        update_column(name.to_sym, val)
+        if new_record?
+          assign_attributes({name.to_sym => val})
+        else
+          update_column(name.to_sym, val)
+        end
         return val
       end
     end
