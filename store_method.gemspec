@@ -1,6 +1,8 @@
+require File.expand_path("../lib/version", __FILE__)
+
 Gem::Specification.new do |s|
   s.name        = "store_method"
-  s.version     = "0.0.1"
+  s.version     = StoreMethod::VERSION
   s.authors     = ["Vitaly Fomichov"]
   s.email       = ["fomichov@gmail.com"]
   s.homepage    = "https://github.com/fomichov/store_method"
