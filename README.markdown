@@ -68,7 +68,33 @@ SQL (5.7ms)  UPDATE `users` SET `users`.`avatar_url` = 'http://www.gravatar.com/
 
 ## Caveats
 
-Arguments are also supported
+Calling stored method with arguments passes these arguments to original method:
+
+```ruby
+class Item < ActiveRecord::Base
+  include StoreMethod
+  store_method :gravatar_url
+
+  def gravatar_url(size = 42)
+    ...
+  end
+end
+```
+
+This call returns default (stored) value:
+```ruby
+user.gravatar_url
+ => "http://www.gravatar.com/avatar/fc383b8294226d72f3a7828eeef86987?d=https%3A%2F%2Fidenticons.github.com%2Ffc383b8294226d72f3a7828eeef86987.png&s=42" 
+```
+
+This call returns new value calculated using size argument:
+```ruby
+user.gravatar_url(100)
+ => "http://www.gravatar.com/avatar/fc383b8294226d72f3a7828eeef86987?d=https%3A%2F%2Fidenticons.github.com%2Ffc383b8294226d72f3a7828eeef86987.png&s=100" 
+```
+
+Notice that passing argument won't update stored value.
+
 
 ## Contributing to store_method
 
