@@ -88,7 +88,7 @@ user.friends_count
  100
  ```
 
-This call returns new value calculated using size argument:
+This call returns new value calculated using degree argument:
 ```ruby
 user.friends_count(5)
  => 
