@@ -66,7 +66,7 @@ SQL (5.7ms)  UPDATE `users` SET `users`.`gravatar_url` = 'http://www.gravatar.co
 ```
 
 
-## Caveats
+## Handling Arguments
 
 Calling stored method with arguments passes these arguments to original method:
 
