@@ -97,6 +97,9 @@ user.friends_count(5)
 
 Notice that passing argument won't update stored value.
 
+## ToDo List
+* Implement some checks to ensure that method names match DB columns
+* Implement some automation for adding new DB fields
 
 ## Contributing to store_method
 
