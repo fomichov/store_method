@@ -37,11 +37,10 @@ rails g migration AddGravatarURLToUsers gravatar_url:string
 
 (Notice that database column type should match the type that our method returns, any valid column type is supported)
 
-Then include **StoreMethod** module to our model class, and add store_method call with a method name
+Then add store_method call with a method name
 
 ```ruby
 class User < ActiveRecord::Base
-  include StoreMethod
   store_method :gravatar_url
 
   def gravatar_url
@@ -72,7 +71,6 @@ Calling stored method with arguments passes these arguments to original method:
 
 ```ruby
 class Item < ActiveRecord::Base
-  include StoreMethod
   store_method :friends_count
 
   def friends_count(degree = 1)

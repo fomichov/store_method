@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  include StoreMethod
   store_method :name
 
   def process(s)

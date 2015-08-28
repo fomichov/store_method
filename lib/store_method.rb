@@ -1,8 +1,4 @@
 module StoreMethod
-  def self.included base
-    base.extend ClassMethods
-  end
-
   module ClassMethods
     def store_method *names
       @methods_to_store ||= {}
@@ -57,3 +53,5 @@ module StoreMethod
     end
   end
 end
+
+ActiveRecord::Base.send(:extend, StoreMethod::ClassMethods)

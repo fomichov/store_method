@@ -1,0 +1,3 @@
+0.1.1 / August 28, 2015
+
+* automatically include gem without placing include call in the Class
