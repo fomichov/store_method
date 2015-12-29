@@ -32,7 +32,7 @@ module StoreMethod
             if new_record?
               assign_attributes({name.to_sym => val})
             else
-              update_column(name.to_sym, val)
+              update_column(name.to_sym, val) if val
             end
           end
           return val
