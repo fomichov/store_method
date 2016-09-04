@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "activerecord", ['>= 3.0']
-  s.add_development_dependency "bundler", ['>= 1.0.0', '<= 1.4']
+  s.add_development_dependency "bundler", ['>= 1.0.0', '<= 2.0.0']
   s.add_development_dependency 'rspec', ["= 3.1.0"]
   s.add_development_dependency "database_cleaner", "1.0.1"
   s.add_development_dependency "rake", ">= 0.9.2"
