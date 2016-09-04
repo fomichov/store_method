@@ -35,7 +35,8 @@ First create corresponding database field
 rails g migration AddGravatarURLToUsers gravatar_url:string
 ```
 
-(Notice that database column type should match the type that our method returns, any valid column type is supported)
+Notice 1: Database column type should match the type that our method returns, any valid column type is supported
+Notice 2: Assigning default value for the database field will break the logic of this gem because we assume that initial value of every database record is NULL.
 
 Then add store_method call with a method name
 
